@@ -260,7 +260,41 @@ $bp_xs: 414px; // 480px
   
   
 <div class="frontWrapper_section">
-  <div class="title"><h4>Responsive layout</h4></div>
+  <div class="title"><h4>Responsive layout - NEWER</h4></div>
+    <div class="content">
+        
+<pre class="brush:javascript">
+/*
+ * SASS - MIXINS - LAYOUT - RESPONSIVE
+ */
+ 
+@mixin centered {
+	/* display: block; */ // ?? why was this commented out ???
+	margin-left: auto; // fallback
+	margin-right: auto; // fallback
+    margin-inline: auto; // this her emxin is stil usable - but shodl be renamed to "mi_auto" ...
+}
+				
+@mixin fullwidth { 
+  float: none; 
+  width: 100%;
+    
+/*
+width: 100% !important; 
+clear: both; 
+float: none; 
+margin-right: 0; // unset
+*/
+  
+  }
+</pre> 
+ 
+    </div>
+</div> 
+
+
+<div class="frontWrapper_section">
+  <div class="title"><h4>Responsive layout - OLDER</h4></div>
     <div class="content">
         
 <pre class="brush:javascript">
@@ -294,7 +328,37 @@ margin-right: 0;
 
 	
 <div class="frontWrapper_section">
-  <div class="title"><h4>Padding</h4></div>
+  <div class="title"><h4>Padding - NEWER</h4></div>
+    <div class="content">
+        
+<pre class="brush:javascript">
+/* 
+ * SASS - MIXINS - LAYOUT - PADDING
+ */
+
+@mixin px($padding-horizontal) { // TORO - rename as ph or pi  VS   or px, as its inthe x-axoiss, asi lo de margins etc ya tb siemrpe irán !!!
+	padding-left: $padding-horizontal; // fallback
+	padding-right: $padding-horizontal; // fallback
+    padding-inline: $padding-horizontal;
+	}
+
+@mixin py($padding-vertical) {
+	padding-top: $padding-vertical; // fallback
+	padding-bottom: $padding-vertical; // fallback
+    padding-block: $padding-vertical;
+}
+</pre> 
+
+    </div>
+</div>
+
+
+
+
+
+	
+<div class="frontWrapper_section">
+  <div class="title"><h4>Padding - older</h4></div>
     <div class="content">
         
 <pre class="brush:javascript">
@@ -318,9 +382,39 @@ margin-right: 0;
 
 
 
+<div class="frontWrapper_section">
+  <div class="title"><h4>Margin - NEWER</h4></div>
+    <div class="content">
+
+<pre class="brush:javascript">
+/* 
+ * SASS - MIXINS - LAYOUT - MARGIN
+ */   
+ 
+
+
+@mixin mx($margin-horizontal) {
+    margin-left: $margin-horizontal; // fallback
+    margin-right: $margin-horizontal; // fallback
+    margin-inline: $margin-horizontal; 
+}
+@mixin my($margin-vertical) {
+    margin-top: $margin-vertical; // fallback
+    margin-bottom: $margin-vertical; // fallback
+    margin-block: $margin-vertical;
+}  
+
+
+
+</pre> 
+
+    </div>
+</div>
+    
+    
 
 <div class="frontWrapper_section">
-  <div class="title"><h4>Margin</h4></div>
+  <div class="title"><h4>Margin - OLDER</h4></div>
     <div class="content">
 
 <pre class="brush:javascript">
@@ -342,7 +436,9 @@ margin-right: 0;
     </div>
 </div>
     
-    
+
+
+
 
 <div class="frontWrapper_section">
   <div class="title">Images</div>
@@ -353,7 +449,7 @@ margin-right: 0;
  * SASS - MIXINS - IMAGES
  */ 
  
-@mixin img { 
+@mixin img { // this shoudl already be in ythe css reset anyawaya !!!!!!!! 
   width: 100%;
   display: block;
   }
